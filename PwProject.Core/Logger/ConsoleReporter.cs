@@ -1,4 +1,4 @@
-﻿namespace PwProject.Core
+﻿namespace PwProject.Core.Logger
 {
     public class ConsoleReporter : IReporter
     {

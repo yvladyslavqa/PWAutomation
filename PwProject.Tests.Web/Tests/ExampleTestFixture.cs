@@ -1,26 +1,35 @@
 ﻿using NUnit.Framework;
+using PwProject.Core.Autofac;
+using PwProject.Core.Configuration;
 using PwProject.Core.Web;
 using PwProject.Domain;
 using PwProject.WebInteraction.ReportPortal.Pages;
-namespace PwProject.Tests.Web
+namespace PwProject.Tests.Web.Tests
 {
     [TestFixture]
+    [Parallelizable(ParallelScope.Self)]
+    [FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
     public class ExampleTestsFixture : BaseWebTestFixture
     {
-        protected LoginPage _loginPage;
+        private LoginPage _loginPage;
+        private EnvironmentConfiguration _environmentConfiguration;
+
+        public ExampleTestsFixture()
+        {
+            _environmentConfiguration = DependencyResolver.Resolve<EnvironmentConfiguration>();
+        }
 
         User createUser = new User()
         {
-            Email = "testUser@test.com",
-            Password = "password",
+            Email = "default",
+            Password = "1q2w3e",
         };
 
         [Test]
         public async Task Test_NavigateToReportPortal_Login_InccorectUser()
         {
             _loginPage = new LoginPage(_page);
-            // Navigate to Google homepage
-            await _loginPage.GotoAsync();
+            await _loginPage.GotoAsync(_environmentConfiguration.ReportPortal);
 
             await _loginPage.LoginAsync(createUser);
 

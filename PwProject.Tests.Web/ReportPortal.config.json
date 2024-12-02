@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "server": {
+    "url": "http://localhost:8080",
+    "project": "default_personal",
+    "apiKey": "PWProject_5SfBwFPQQz-rUK4yJo3iso1z6gkk-ZFjE_HbsVeRu3VlXI6qlx_bF05dSH0whb3I"
+  },
+  "launch": {
+    "name": "LoginTest",
+    "description": "Login tests",
+    "debugMode": false,
+    "attributes": [ "Pw", "Windows", "Tests" ]
+  }
+}

@@ -26,9 +26,19 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Options" Version="7.0.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+		<PackageReference Include="ReportPortal.NUnit" Version="4.7.0" />		
 		<ProjectReference Include="..\PwProject.Core.Web\PwProject.Core.Web.csproj" />
 		<ProjectReference Include="..\PwProject.Core\PwProject.Core.csproj" />
 		<ProjectReference Include="..\PwProject.WebInteraction\PwProject.WebInteraction.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="environment.qa.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	</ItemGroup>
 
 </Project>

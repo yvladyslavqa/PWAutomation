@@ -1,4 +1,5 @@
 ﻿using Microsoft.Playwright;
+using PwProject.Core.Logger;
 
 namespace PwProject.Core.Web.Component
 {

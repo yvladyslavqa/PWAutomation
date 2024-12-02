@@ -1,5 +1,6 @@
 ﻿using Microsoft.Playwright;
 using NUnit.Framework;
+using PwProject.Core.Logger;
 
 namespace PwProject.Core.Web.PageObject
 {

@@ -1,6 +1,6 @@
 ﻿using FluentAssertions;
 using Microsoft.Playwright;
-using PwProject.Core;
+using PwProject.Core.Logger;
 using PwProject.Core.Web.Component;
 using PwProject.Core.Web.PageObject;
 using PwProject.Domain;
@@ -22,7 +22,7 @@ namespace PwProject.WebInteraction.ReportPortal.Pages
 
         }
 
-        public async Task GotoAsync(AnnotationType annotationType = AnnotationType.Step) => await this.GotoPageAsync("https://reportportal.epam.com/ui/#login");
+        public async Task GotoAsync(string url, AnnotationType annotationType = AnnotationType.Step) => await this.GotoPageAsync(url);
 
         public async Task EnterLoginField(string login) => await this.LoginInput.FillAsync(login);
         public async Task EnterPasswordField(string password) => await this.PasswordInput.FillAsync(password);
